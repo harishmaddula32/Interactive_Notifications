@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E47E0871ADF8E0100AA64E7 /* image button.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E47E0861ADF8E0100AA64E7 /* image button.png */; };
+		5E47E08D1ADF915800AA64E7 /* Untitled.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E47E08C1ADF915800AA64E7 /* Untitled.png */; };
+		5E47E0931ADFACC300AA64E7 /* 414x95.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E47E0921ADFACC300AA64E7 /* 414x95.png */; };
 		5EC2C6921ADCEBDE00FEE1D9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC2C6911ADCEBDE00FEE1D9 /* main.m */; };
 		5EC2C6951ADCEBDE00FEE1D9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC2C6941ADCEBDE00FEE1D9 /* AppDelegate.m */; };
 		5EC2C6981ADCEBDE00FEE1D9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC2C6971ADCEBDE00FEE1D9 /* ViewController.m */; };
@@ -27,6 +30,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E47E0861ADF8E0100AA64E7 /* image button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image button.png"; sourceTree = "<group>"; };
+		5E47E08C1ADF915800AA64E7 /* Untitled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Untitled.png; sourceTree = "<group>"; };
+		5E47E0921ADFACC300AA64E7 /* 414x95.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 414x95.png; sourceTree = "<group>"; };
 		5EC2C68C1ADCEBDE00FEE1D9 /* Notifications.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notifications.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EC2C6901ADCEBDE00FEE1D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EC2C6911ADCEBDE00FEE1D9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -85,6 +91,9 @@
 				5EC2C6941ADCEBDE00FEE1D9 /* AppDelegate.m */,
 				5EC2C6961ADCEBDE00FEE1D9 /* ViewController.h */,
 				5EC2C6971ADCEBDE00FEE1D9 /* ViewController.m */,
+				5E47E0861ADF8E0100AA64E7 /* image button.png */,
+				5E47E08C1ADF915800AA64E7 /* Untitled.png */,
+				5E47E0921ADFACC300AA64E7 /* 414x95.png */,
 				5EC2C6991ADCEBDF00FEE1D9 /* Main.storyboard */,
 				5EC2C69C1ADCEBDF00FEE1D9 /* Images.xcassets */,
 				5EC2C69E1ADCEBDF00FEE1D9 /* LaunchScreen.xib */,
@@ -168,6 +177,7 @@
 				TargetAttributes = {
 					5EC2C68B1ADCEBDE00FEE1D9 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 9DNQ7AHSCL;
 					};
 					5EC2C6A41ADCEBDF00FEE1D9 = {
 						CreatedOnToolsVersion = 6.1;
@@ -201,6 +211,9 @@
 			files = (
 				5EC2C69B1ADCEBDF00FEE1D9 /* Main.storyboard in Resources */,
 				5EC2C6A01ADCEBDF00FEE1D9 /* LaunchScreen.xib in Resources */,
+				5E47E0871ADF8E0100AA64E7 /* image button.png in Resources */,
+				5E47E08D1ADF915800AA64E7 /* Untitled.png in Resources */,
+				5E47E0931ADFACC300AA64E7 /* 414x95.png in Resources */,
 				5EC2C69D1ADCEBDF00FEE1D9 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,9 +358,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Notifications/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -355,9 +373,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Notifications/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -414,6 +437,7 @@
 				5EC2C6B11ADCEBDF00FEE1D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5EC2C6B21ADCEBDF00FEE1D9 /* Build configuration list for PBXNativeTarget "NotificationsTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +446,7 @@
 				5EC2C6B41ADCEBDF00FEE1D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

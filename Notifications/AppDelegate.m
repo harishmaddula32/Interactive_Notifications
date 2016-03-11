@@ -14,10 +14,58 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    UIMutableUserNotificationAction* deleteAction = [[UIMutableUserNotificationAction alloc] init];
+    [deleteAction setIdentifier:@"delete_action_id"];
+    [deleteAction setTitle:@"Dismiss"];
+    [deleteAction setActivationMode:UIUserNotificationActivationModeBackground];
+    [deleteAction setDestructive:YES];
+    
+    UIMutableUserNotificationAction* replyAction = [[UIMutableUserNotificationAction alloc] init];
+    [replyAction setIdentifier:@"reply_action_id"];
+    [replyAction setTitle:@"Mark as Fixed"];
+    [replyAction setActivationMode:UIUserNotificationActivationModeForeground];
+    [replyAction setDestructive:NO];
+    
+    UIMutableUserNotificationCategory* deleteReplyCategory = [[UIMutableUserNotificationCategory alloc] init];
+    [deleteReplyCategory setIdentifier:@"custom_category_id"];
+    [deleteReplyCategory setActions:@[replyAction, deleteAction] forContext:UIUserNotificationActionContextDefault];
+    
+    NSSet* categories = [NSSet setWithArray:@[deleteReplyCategory]];
+    UIUserNotificationSettings* settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert) categories:categories];
+    [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+    
     return YES;
+}
+
+- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forLocalNotification:(UILocalNotification *)notification completionHandler:(void(^)())completionHandler
+{
+    if([notification.category isEqualToString:@"custom_category_id"])
+    {
+        if([identifier isEqualToString:@"delete_action_id"])
+        {
+            NSLog(@"Delete was pressed");
+        }
+        else if([identifier isEqualToString:@"reply_action_id"])
+        {
+            NSLog(@"Reply was pressed");
+        }
+    }
+    
+    //	Important to call this when finished
+    completionHandler();
+}
+
+-(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
+    
+    //CLRegion *region = notification.region;
+    if ([notification.category isEqualToString:@"custom_category_id"]) {
+        NSLog(@"Image category notification is presented to the user");
+    }else if([notification.category isEqualToString:@"Email"]){
+        NSLog(@"Email category notification is presented to the user");
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -35,6 +83,7 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
+   
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
 
